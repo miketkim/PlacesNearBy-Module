@@ -13,17 +13,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}./../client/dist`));
 
 
-app.get('/api/nearbyPlaces/:id', (req, res) => {
-  //req.params.id
-  let randomIndex = Math.floor(Math.random() * Math.floor(100));
-  database.find({ index: { $gte: randomIndex }}, (err, docs) => {
+app.get('/api/nearbyPlaces', (req, res) => {
+  db.getAll((err, data) => {
     if (err) {
       throw err; 
     } else {
-      res.send(docs); 
+      res.send(data)
     }
-  });
-}); 
+  })
+})
 
 
 app.listen(port, () => {

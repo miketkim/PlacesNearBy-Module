@@ -16,4 +16,15 @@ const placeSchema = new mongoose.Schema({
 
 const Place = mongoose.model('Places', placeSchema);
 
-module.exports.Place = Place; 
+const getAll = function(callback) {
+  Place.find({}).exec((err, data) => {
+    if(err){
+      callback(err)
+    } else {
+      callback(null, data)
+    }
+  })
+}
+
+
+module.exports = {Place, getAll}

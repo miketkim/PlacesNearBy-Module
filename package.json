@@ -24,7 +24,7 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "seed": "node seed/seedPlaces.js", 
+    "seed": "node seed/seedPlaces.js",
     "server-dev": "nodemon server/app.js"
   },
   "repository": {
