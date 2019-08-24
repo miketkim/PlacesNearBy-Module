@@ -7,6 +7,7 @@ const placeList = [];
 //const faker = require('faker');
 //model.dropCollection('Places')
 
+//test
 for (var i = 0; i < 100; i++) {
    let place = {
     id: i,
@@ -20,7 +21,21 @@ for (var i = 0; i < 100; i++) {
     placeList.push(place)
 }
 
-let save = (placeList) => { //githubObject is an array of objects
+
+for (var i = 0; i < 100; i++) {
+   let place = {
+    id: i,
+    photoUrl: `https://nearby-recommendations.s3-us-west-1.amazonaws.com/${i}.jpg`, 
+    title: faker.lorem.sentence(),
+    city: faker.address.city(),
+    propertyType: faker.lorem.words(),
+    price: Math.floor(Math.random() * 200 + 100),
+    reviews: Math.floor(Math.random() * 200 + 100),
+    }
+    placeList.push(place)
+}
+
+let save = (placeList) => { //PLACELIST is an array of objects
 
   var placeArray = [];
   //var parsedPlaces = JSON.parse(placeList); //array of repo objects
