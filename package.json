@@ -23,7 +23,9 @@
     "babel-loader": "^8.0.6"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "seed": "node seed/seedPlaces.js", 
+    "server-dev": "nodemon server/app.js"
   },
   "repository": {
     "type": "git",
