@@ -1,27 +1,36 @@
-import React from 'react';
-import $ from 'jquery'; 
+import React, { Component } from 'react';
+import axios from 'axios'; 
 
-export default class App extends React.Component {
-  constructor(props) {
+class App extends Component {
+  constructor(props){
     super(props);
     this.state = {
-      places = [] 
+      places: [], 
+      activities: []
     }
-  }
-  
-  componentDidMount() { 
-    $.get('/api/nearbyPlaces/:id', (places) => {
-        this.setState({
-          places: places 
-        });
-      });
-  }
-  
-  
 
+    this.fetchPlaces = this.fetchPlaces.bind(this); 
+  }
+  componentDidMount() {
+    this.fetchPlaces()
+  }
+
+  fetchPlaces() {
+    axios.get('/api/nearbyPlaces', {
+    })
+    .then(res => {
+      const places = res.data;
+      this.setState({ places });
+    })
+    // .setState({
+    //   places: response 
+    // })
+}
   render() {
     return (
-      <div>HI</div>
+      <div>Healthy</div>
     );
   }
 }
+
+export default App;
