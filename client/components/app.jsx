@@ -22,10 +22,17 @@ class App extends Component {
       const places = res.data;
       this.setState({ places });
     })
-    // .setState({
-    //   places: response 
-    // })
-}
+  }
+
+  //same thing for Activities to be done later
+  // fetchActivities() {
+  //   axios.get('/api/nearbyActivities', {
+  //   })
+  //   .then(res => {
+  //     const activities = res.data; 
+  //     this.setState({activities})
+  //   })
+  // }
   render() {
     return (
       <div>Healthy</div>
