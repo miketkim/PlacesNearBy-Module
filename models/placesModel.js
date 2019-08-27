@@ -16,7 +16,7 @@ const placeSchema = new mongoose.Schema({
 
 const Place = mongoose.model('Places', placeSchema);
 
-const getAll = function(callback) {
+const getAllPlaces = function(callback) {
   Place.find({}).exec((err, data) => {
     if(err){
       callback(err)
@@ -27,4 +27,4 @@ const getAll = function(callback) {
 }
 
 
-module.exports = {Place, getAll}
+module.exports = {Place, getAllPlaces}
