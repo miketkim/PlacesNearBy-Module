@@ -15,4 +15,14 @@ const activitySchema = new mongoose.Schema({
 
 const Activity = mongoose.model('Activity', activitySchema);
 
-module.exports.Activity = Activity; 
+const getAllActivities = function(callback) {
+  Activity.find({}).exec((err, data) => {
+    if(err){
+      callback(err)
+    } else {
+      callback(null, data)
+    }
+  })
+}
+
+module.exports = {Activity, getAllActivities}

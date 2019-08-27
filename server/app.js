@@ -1,6 +1,6 @@
-
 const express = require('express');
-const db = require('../models/placesModel');
+const dbPlaces = require('../models/placesModel');
+const dbActivities = require('../models/activitiesModel')
 // const path = require('path');
 
 const port = 3000;
@@ -14,7 +14,7 @@ app.use(express.static(`${__dirname}./../client/dist`));
 
 
 app.get('/api/nearbyPlaces', (req, res) => {
-  db.getAll((err, data) => {
+  dbPlaces.getAllPlaces((err, data) => {
     if (err) {
       throw err; 
     } else {
@@ -22,6 +22,17 @@ app.get('/api/nearbyPlaces', (req, res) => {
     }
   })
 })
+
+
+// app.get('/api/nearbyActivities', (req, res) => {
+//   dbActivities.getAllActivities((err, data) => {
+//     if (err) {
+//       throw err; 
+//     } else {
+//       res.send(data)
+//     }
+//   })
+// })
 
 
 app.listen(port, () => {

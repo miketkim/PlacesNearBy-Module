@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
+import PlacesNearby from './PlacesNearby.jsx'
 
 class App extends Component {
   constructor(props){
@@ -35,7 +36,9 @@ class App extends Component {
   // }
   render() {
     return (
-      <div>Healthy</div>
+      <div>
+        <PlacesNearby places={this.state.places} />
+      </div>
     );
   }
 }
