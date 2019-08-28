@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <PlacesNearby places={this.state.places} />
+        <PlacesNearby places ={this.state.places}/>
       </div>
     );
   }
